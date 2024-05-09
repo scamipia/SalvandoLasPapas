@@ -25,30 +25,41 @@ expand = true
 [node name="Container" type="Control" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = 1.0
+margin_right = 39.0
 
 [node name="Buttons" type="VBoxContainer" parent="CanvasLayer/Container"]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 400.0
-margin_top = 200.0
+margin_top = 150.0
 margin_right = 628.0
-margin_bottom = 250.0
+margin_bottom = 299.0
 
 [node name="StartButton" type="Button" parent="CanvasLayer/Container/Buttons"]
-margin_top = -20.0
 margin_right = 228.0
-margin_bottom = 27.0
+margin_bottom = 47.0
 custom_fonts/font = SubResource( 1 )
 text = "Start"
 
-[node name="OptionsButton" type="Button" parent="CanvasLayer/Container/Buttons"]
+[node name="ExitButton" type="Button" parent="CanvasLayer/Container/Buttons"]
 margin_top = 51.0
 margin_right = 228.0
 margin_bottom = 98.0
+custom_fonts/font = SubResource( 1 )
+text = "Exit"
+
+[node name="OptionsButton" type="Button" parent="CanvasLayer/Container/Buttons"]
+margin_top = 102.0
+margin_right = 228.0
+margin_bottom = 149.0
+rect_pivot_offset = Vector2( -642, -438 )
 custom_fonts/font = SubResource( 1 )
 text = "Options"
 
 [node name="OptionsMenu" parent="CanvasLayer" instance=ExtResource( 2 )]
 visible = false
 
+[connection signal="pressed" from="CanvasLayer/Container/Buttons/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/Container/Buttons/ExitButton" to="." method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/Container/Buttons/OptionsButton" to="CanvasLayer/OptionsMenu" method="show"]
