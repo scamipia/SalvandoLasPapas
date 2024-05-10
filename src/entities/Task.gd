@@ -1,9 +1,7 @@
 extends Area2D
 
 signal hit
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+signal win
 onready var sprite = $Sprite
 var playerCompletedTask = false
 var mousePlayerCompletedTask = false
@@ -16,8 +14,6 @@ func _on_Task_body_entered(body):
 		completeTask()
 	else:
 		changeState("res://assets/player_completed_task.png")
-	# Must be deferred as we can't change physics properties on a physics callback.
-	$CollisionShape2D.set_deferred("disabled", true)
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("right_click"):
@@ -33,3 +29,10 @@ func changeState(textureRoute):
 
 func completeTask():
 	changeState("res://assets/task_completed.png")
+	emit_signal("win")
+	
+func reset():
+	playerCompletedTask = false
+	mousePlayerCompletedTask = false
+	changeState("res://assets/task.png")
+	
