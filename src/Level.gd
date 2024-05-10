@@ -6,10 +6,6 @@ onready var remaining_time = $RemainingTime
 onready var win_menu = $CanvasLayer/WinMenu
 onready var task = $Task
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 func _ready():
 	remaining_time.start()
 	
