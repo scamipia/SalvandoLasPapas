@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/task.png" type="Texture" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[node name="Task" type="StaticBody2D"]
+constant_linear_velocity = Vector2( 100, 100 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -3.14159
+scale = Vector2( 2.1877, 2.49767 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 1 )
