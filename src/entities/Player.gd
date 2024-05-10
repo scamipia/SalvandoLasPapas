@@ -15,3 +15,7 @@ func _physics_process(delta):
 
 	position.x += x_direction * speed * delta
 	position.y += y_direction * speed * delta
+
+
+
+
