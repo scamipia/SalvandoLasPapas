@@ -2,10 +2,7 @@
 
 [ext_resource path="res://assets/fonts/kirifont/KiriFont.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://src/ui/ActionInput.gd" type="Script" id=2]
-
-[sub_resource type="DynamicFont" id=1]
-size = 32
-font_data = ExtResource( 1 )
+[ext_resource path="res://assets/controls/move-left.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=2]
 size = 25
@@ -20,26 +17,24 @@ script = ExtResource( 2 )
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 877.0
-margin_bottom = 54.0
+margin_bottom = 71.0
 
 [node name="Panel" type="PanelContainer" parent="HBoxContainer"]
-margin_right = 42.0
-margin_bottom = 47.0
+margin_right = 65.0
+margin_bottom = 64.0
 
-[node name="Input" type="Label" parent="HBoxContainer/Panel"]
+[node name="Input" type="TextureRect" parent="HBoxContainer/Panel"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 35.0
-margin_bottom = 40.0
-custom_fonts/font = SubResource( 1 )
-text = "D"
+margin_right = 58.0
+margin_bottom = 57.0
+texture = ExtResource( 3 )
 
 [node name="Action" type="Label" parent="HBoxContainer"]
-margin_left = 46.0
-margin_top = 10.0
+margin_left = 69.0
+margin_top = 19.0
 margin_right = 870.0
-margin_bottom = 36.0
+margin_bottom = 45.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 2 )
-text = "Move Right"
 align = 1

@@ -1,8 +1,14 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/ui/ActionInput.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/fonts/kirifont/KiriFont.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://src/ui/OptionsMenu.gd" type="Script" id=3]
+[ext_resource path="res://assets/controls/move-left.png" type="Texture" id=4]
+[ext_resource path="res://assets/controls/move-right.png" type="Texture" id=5]
+[ext_resource path="res://assets/controls/move-up.png" type="Texture" id=6]
+[ext_resource path="res://assets/controls/move-down.png" type="Texture" id=7]
+[ext_resource path="res://assets/controls/right-click.png" type="Texture" id=8]
+[ext_resource path="res://assets/controls/exit.png" type="Texture" id=9]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.733333, 0.392157, 0.188235, 1 )
@@ -78,58 +84,46 @@ margin_right = -20.0
 margin_bottom = -119.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainPanel/ScrollContainer"]
-margin_right = 872.0
-margin_bottom = 451.0
+margin_right = 884.0
+margin_bottom = 365.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
 [node name="ActionInput" parent="MainPanel/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
-margin_right = 872.0
-margin_bottom = 61.0
-action_input = "A"
+margin_top = 52.0
+margin_bottom = 92.0
+action_input = ExtResource( 4 )
 action_name = "Move Left"
 
 [node name="ActionInput2" parent="MainPanel/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
-margin_top = 65.0
-margin_right = 872.0
-margin_bottom = 126.0
-action_input = "D"
+margin_top = 96.0
+margin_bottom = 136.0
+action_input = ExtResource( 5 )
 action_name = "Move Right"
 
 [node name="ActionInput3" parent="MainPanel/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
-margin_top = 130.0
-margin_right = 872.0
-margin_bottom = 191.0
-action_input = "W"
+margin_top = 140.0
+margin_bottom = 180.0
+action_input = ExtResource( 6 )
 action_name = "Move Up"
 
 [node name="ActionInput4" parent="MainPanel/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
-margin_top = 195.0
-margin_right = 872.0
-margin_bottom = 256.0
-action_input = "S"
+margin_top = 184.0
+margin_bottom = 224.0
+action_input = ExtResource( 7 )
 action_name = "Move Down"
 
 [node name="ActionInput5" parent="MainPanel/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
-margin_top = 260.0
-margin_right = 872.0
-margin_bottom = 321.0
-action_input = "Space"
-action_name = "Pick-up Tool"
-
-[node name="ActionInput6" parent="MainPanel/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
-margin_top = 325.0
-margin_right = 872.0
-margin_bottom = 386.0
-action_input = "I"
+margin_top = 228.0
+margin_bottom = 268.0
+action_input = ExtResource( 8 )
 action_name = "Do Task"
 
-[node name="ActionInput7" parent="MainPanel/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
-margin_top = 390.0
-margin_right = 872.0
-margin_bottom = 451.0
-action_input = "esc"
+[node name="ActionInput6" parent="MainPanel/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 272.0
+margin_bottom = 312.0
+action_input = ExtResource( 9 )
 action_name = "Exit"
 
 [connection signal="pressed" from="MainPanel/ReturnButton" to="." method="hide"]
