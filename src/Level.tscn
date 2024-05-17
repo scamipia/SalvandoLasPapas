@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://assets/background.png" type="Texture" id=1]
+[ext_resource path="res://assets/vecteezy_vector-laminate-background-with-wooden-texture_162751.jpg" type="Texture" id=1]
 [ext_resource path="res://src/Level.gd" type="Script" id=2]
 [ext_resource path="res://src/entities/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/ui/PauseMenu.tscn" type="PackedScene" id=4]
@@ -8,6 +8,8 @@
 [ext_resource path="res://src/ui/DefeatMenu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/entities/Task.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/ui/WinMenu.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/entities/VerticalWall.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/entities/HorizontalWall.tscn" type="PackedScene" id=10]
 
 [node name="Level" type="Node"]
 script = ExtResource( 2 )
@@ -18,30 +20,43 @@ anchor_bottom = 1.0
 texture = ExtResource( 1 )
 expand = true
 
-[node name="Task" parent="." instance=ExtResource( 7 )]
-position = Vector2( 549, 210 )
-scale = Vector2( 0.982636, 1.01244 )
-
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 100, 100 )
+position = Vector2( 392, 308 )
 scale = Vector2( 0.991978, 1.01791 )
+
+[node name="Task" parent="." instance=ExtResource( 7 )]
+position = Vector2( 629, 326 )
+scale = Vector2( 0.982636, 1.01244 )
+totalSteps = 8
+worker = false
+
+[node name="Task2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 885, 106 )
+
+[node name="VerticalWall" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1005, -2 )
+
+[node name="VerticalWall2" parent="." instance=ExtResource( 9 )]
+
+[node name="HorizontalWall" parent="." instance=ExtResource( 10 )]
+position = Vector2( 0, -9 )
+
+[node name="HorizontalWall2" parent="." instance=ExtResource( 10 )]
+position = Vector2( -3, 571 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource( 4 )]
-visible = false
 
 [node name="GUI" parent="CanvasLayer" instance=ExtResource( 5 )]
 
 [node name="DefeatMenu" parent="CanvasLayer" instance=ExtResource( 6 )]
 pause_mode = 2
-visible = false
 
 [node name="WinMenu" parent="CanvasLayer" instance=ExtResource( 8 )]
 
 [node name="RemainingTime" type="Timer" parent="."]
 
-[connection signal="win" from="Task" to="." method="_on_Task_win"]
 [connection signal="timeout" from="CanvasLayer/GUI" to="." method="game_over"]
 [connection signal="restart_requested" from="CanvasLayer/DefeatMenu" to="." method="_on_DefeatMenu_restart_requested"]
 [connection signal="restart_requested" from="CanvasLayer/WinMenu" to="." method="_on_WinMenu_restart_requested"]

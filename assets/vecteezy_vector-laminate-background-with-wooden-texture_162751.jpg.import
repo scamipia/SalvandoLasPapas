@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/task.png-24d74b12eea568724d07fe6276ee0b4b.stex"
+path="res://.import/vecteezy_vector-laminate-background-with-wooden-texture_162751.jpg-3a7831b03e739d2b0c5619edf3252198.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/task.png"
-dest_files=[ "res://.import/task.png-24d74b12eea568724d07fe6276ee0b4b.stex" ]
+source_file="res://assets/vecteezy_vector-laminate-background-with-wooden-texture_162751.jpg"
+dest_files=[ "res://.import/vecteezy_vector-laminate-background-with-wooden-texture_162751.jpg-3a7831b03e739d2b0c5619edf3252198.stex" ]
 
 [params]
 
