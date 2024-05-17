@@ -2,8 +2,8 @@ extends Control
 signal timeout
 
 onready var remaining_time_label = $RemainingTime
-var default_time = 5
-var remaining_time = 5
+var default_time = 30
+var remaining_time = 30
 
 func _ready():
 	restart()

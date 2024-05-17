@@ -17,6 +17,7 @@ script = ExtResource( 2 )
 [node name="Background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 texture = ExtResource( 1 )
 expand = true
 
@@ -32,6 +33,7 @@ worker = false
 
 [node name="Task2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 885, 106 )
+stages = 1
 
 [node name="VerticalWall" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1005, -2 )
@@ -47,13 +49,21 @@ position = Vector2( -3, 571 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource( 4 )]
+visible = false
+mouse_filter = 2
 
 [node name="GUI" parent="CanvasLayer" instance=ExtResource( 5 )]
+visible = false
+mouse_filter = 2
 
 [node name="DefeatMenu" parent="CanvasLayer" instance=ExtResource( 6 )]
 pause_mode = 2
+visible = false
+mouse_filter = 2
 
 [node name="WinMenu" parent="CanvasLayer" instance=ExtResource( 8 )]
+visible = false
+mouse_filter = 2
 
 [node name="RemainingTime" type="Timer" parent="."]
 

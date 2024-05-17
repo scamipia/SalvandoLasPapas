@@ -19,19 +19,21 @@ func game_over():
 	remaining_time.stop()
 	defeat_menu.show()
 	get_tree().paused = true
+	
 
 func _on_DefeatMenu_restart_requested():
 	gui.restart() 
 	remaining_time.start()
 	defeat_menu.hide()
 	get_tree().paused = false
+	get_tree().change_scene("res://src/Level.tscn")
 
 func _on_WinMenu_restart_requested():
 	gui.restart() 
 	remaining_time.start()
 	win_menu.hide()
 	get_tree().paused = false
-	task.reset()
+	get_tree().change_scene("res://src/Level.tscn")
 	
 func count_tasks():
 	var all_childs = get_child_count()
