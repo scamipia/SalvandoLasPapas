@@ -10,12 +10,18 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "StaticBody2D",
-"class": "Task",
+"class": "IndividualTask",
 "language": "GDScript",
-"path": "res://src/entities/Task.gd"
+"path": "res://src/entities/IndividualTask.gd"
+}, {
+"base": "Resource",
+"class": "TaskStackResource",
+"language": "GDScript",
+"path": "res://src/entities/TaskStackResource.gd"
 } ]
 _global_script_class_icons={
-"Task": ""
+"IndividualTask": "",
+"TaskStackResource": ""
 }
 
 [application]

@@ -1,5 +1,5 @@
 extends StaticBody2D
-class_name Task
+class_name IndividualTask
 
 signal hit
 signal win

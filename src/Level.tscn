@@ -6,7 +6,7 @@
 [ext_resource path="res://src/ui/PauseMenu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/ui/GUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/ui/DefeatMenu.tscn" type="PackedScene" id=6]
-[ext_resource path="res://src/entities/Task.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/entities/TaskManager.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/ui/WinMenu.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/entities/VerticalWall.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/entities/HorizontalWall.tscn" type="PackedScene" id=10]
@@ -25,15 +25,7 @@ expand = true
 position = Vector2( 392, 308 )
 scale = Vector2( 0.991978, 1.01791 )
 
-[node name="Task" parent="." instance=ExtResource( 7 )]
-position = Vector2( 629, 326 )
-scale = Vector2( 0.982636, 1.01244 )
-totalSteps = 8
-worker = false
-
-[node name="Task2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 885, 106 )
-stages = 1
+[node name="TaskManager" parent="." instance=ExtResource( 7 )]
 
 [node name="VerticalWall" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1005, -2 )
