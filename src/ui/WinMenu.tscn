@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/ui/WinMenu.gd" type="Script" id=1]
+[ext_resource path="res://assets/audio/win-menu/win-menu-audio.mp3" type="AudioStream" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.113725, 0.117647, 0.0980392, 1 )
@@ -59,6 +60,9 @@ margin_top = 55.0
 margin_right = 52.0
 margin_bottom = 75.0
 text = "Back to menu"
+
+[node name="WinMenuAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
 
 [connection signal="pressed" from="Panel/RestartButton" to="." method="_on_RestartButton_pressed"]
 [connection signal="pressed" from="Panel/BackToMenu" to="." method="_on_BackToMenu_pressed"]

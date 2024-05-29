@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Los Principes del Flamenco - El Periodista.mp3-d2f92eeea3e0b3ceec711db0d542cfaf.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/background/Los Principes del Flamenco - El Periodista.mp3"
+dest_files=[ "res://.import/Los Principes del Flamenco - El Periodista.mp3-d2f92eeea3e0b3ceec711db0d542cfaf.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

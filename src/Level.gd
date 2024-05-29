@@ -5,6 +5,7 @@ onready var defeat_menu = $CanvasLayer/DefeatMenu
 onready var remaining_time = $RemainingTime
 onready var win_menu = $CanvasLayer/WinMenu
 onready var task = $Task
+
 var tasks = 0
 
 func _ready():
@@ -18,6 +19,7 @@ func _on_RemainingTime_timeout():
 func game_over():
 	remaining_time.stop()
 	defeat_menu.show()
+	defeat_menu.play_sound()
 	get_tree().paused = true
 	
 
@@ -51,6 +53,8 @@ func _update_done():
 	print(tasks)
 	if tasks == 0:
 		win_menu.show()
+		win_menu.play_sound()
 		remaining_time.stop()
 		get_tree().paused = true
 
+	
