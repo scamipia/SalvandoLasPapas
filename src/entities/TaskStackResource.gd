@@ -1,23 +1,36 @@
 extends Resource
 class_name TaskStackResource
 
-#export (Array, Resource) var individual_tasks: Array
-#export (int) var clicks_amount: int
-#export (int) var player_type: int
-export (Array, PackedScene) var individual_tasks: Array
 
-#var current_step: int = 0
-#var active_task: IndividualTask
+export (Array, Resource) var individual_tasks_data: Array
 
-func get_next_task(step: int) -> Node:
-	if step >= 0 && step < individual_tasks.size():
-		return individual_tasks[step].instance()
-	return null
+# Método para añadir un elemento a la pila
+func add_task(individual_task):
+	individual_tasks_data.append(individual_task)
+
+# Método para retirar y devolver el último elemento de la pila
+func get_next_task():
+	if not is_empty():
+		return individual_tasks_data.pop_front().get_task()
+	else:
+		print("Error: Intentando hacer pop en una pila vacía")
+		return null
+
+# Método para ver el último elemento sin retirarlo
+func peek():
+	if not is_empty():
+		return individual_tasks_data[-1]
+	else:
+		print("Error: Intentando hacer peek en una pila vacía")
+		return null
+
+# Método para verificar si la pila está vacía
+func is_empty():
+	return individual_tasks_data.size() == 0
 	
-#func get_task() -> Node:
-#	var task_instance = individual_task_scene.instance()
-#	task_instance.setup(self)
-#	return task_instance
 
 func tasks_amount() -> int:
-	return individual_tasks.size()
+	return individual_tasks_data.size()
+
+
+

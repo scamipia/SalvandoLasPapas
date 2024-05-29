@@ -15,12 +15,24 @@ _global_script_classes=[ {
 "path": "res://src/entities/IndividualTask.gd"
 }, {
 "base": "Resource",
+"class": "IndividualTaskResource",
+"language": "GDScript",
+"path": "res://src/entities/IndividualTaskResource.gd"
+}, {
+"base": "Node",
+"class": "Task",
+"language": "GDScript",
+"path": "res://src/entities/Task.gd"
+}, {
+"base": "Resource",
 "class": "TaskStackResource",
 "language": "GDScript",
 "path": "res://src/entities/TaskStackResource.gd"
 } ]
 _global_script_class_icons={
 "IndividualTask": "",
+"IndividualTaskResource": "",
+"Task": "",
 "TaskStackResource": ""
 }
 
