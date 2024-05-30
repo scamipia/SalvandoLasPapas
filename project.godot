@@ -14,6 +14,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/entities/IndividualTask.gd"
 }, {
+"base": "IndividualTask",
+"class": "IndividualTaskKeyboard",
+"language": "GDScript",
+"path": "res://src/entities/IndividualTaskKeyboard.gd"
+}, {
+"base": "IndividualTask",
+"class": "IndividualTaskMouse",
+"language": "GDScript",
+"path": "res://src/entities/InidividualTaskMouse.gd"
+}, {
 "base": "Resource",
 "class": "IndividualTaskResource",
 "language": "GDScript",
@@ -31,6 +41,8 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "IndividualTask": "",
+"IndividualTaskKeyboard": "",
+"IndividualTaskMouse": "",
 "IndividualTaskResource": "",
 "Task": "",
 "TaskStackResource": ""

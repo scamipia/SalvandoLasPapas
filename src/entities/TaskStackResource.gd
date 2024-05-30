@@ -11,7 +11,8 @@ func add_task(individual_task):
 # Método para retirar y devolver el último elemento de la pila
 func get_next_task():
 	if not is_empty():
-		return individual_tasks_data.pop_front().get_task()
+		var task = individual_tasks_data.pop_front().get_task()
+		return task
 	else:
 		print("Error: Intentando hacer pop en una pila vacía")
 		return null
@@ -26,6 +27,7 @@ func peek():
 
 # Método para verificar si la pila está vacía
 func is_empty():
+	print(individual_tasks_data.size())
 	return individual_tasks_data.size() == 0
 	
 

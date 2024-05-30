@@ -6,6 +6,9 @@ var screen_size
 var velocity: Vector2 = Vector2.ZERO
 var job
 
+
+func _ready():
+	print(global_position)
 # Called when the node enters the scene tree for the first time.
 func _physics_process(delta):
 	_process_input()
@@ -37,4 +40,5 @@ func _process_input() -> void:
 
 func _execute_job():
 	if job:
-		job.work_by_kb()
+		print(job)
+		job.work() 

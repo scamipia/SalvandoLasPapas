@@ -25,9 +25,11 @@ expand = true
 position = Vector2( 392, 308 )
 scale = Vector2( 0.991978, 1.01791 )
 
-[node name="Task" parent="." instance=ExtResource( 7 )]
+[node name="TaskMouseFirst" parent="." instance=ExtResource( 7 )]
+stackRoute = "res://src/resources/stack_mouse_first.tres"
 
-[node name="Task2" type="Node" parent="."]
+[node name="TaskKbFirst" parent="." instance=ExtResource( 7 )]
+stackRoute = "res://src/resources/stack_kb_first.tres"
 
 [node name="VerticalWall" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1005, -2 )
@@ -43,20 +45,16 @@ position = Vector2( -3, 571 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource( 4 )]
-visible = false
 mouse_filter = 2
 
 [node name="GUI" parent="CanvasLayer" instance=ExtResource( 5 )]
-visible = false
 mouse_filter = 2
 
 [node name="DefeatMenu" parent="CanvasLayer" instance=ExtResource( 6 )]
 pause_mode = 2
-visible = false
 mouse_filter = 2
 
 [node name="WinMenu" parent="CanvasLayer" instance=ExtResource( 8 )]
-visible = false
 mouse_filter = 2
 
 [node name="RemainingTime" type="Timer" parent="."]
