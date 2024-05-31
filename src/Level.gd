@@ -4,7 +4,6 @@ onready var gui = $CanvasLayer/GUI
 onready var defeat_menu = $CanvasLayer/DefeatMenu
 onready var remaining_time = $RemainingTime
 onready var win_menu = $CanvasLayer/WinMenu
-onready var task_manager = $TaskManager
 #onready var task = $IndividualTask
 export (int) var jump_speed: int = 500
 var tasks_remaining = 0

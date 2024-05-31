@@ -28,6 +28,9 @@ scale = Vector2( 0.991978, 1.01791 )
 [node name="TaskMouseFirst" parent="." instance=ExtResource( 7 )]
 stackRoute = "res://src/resources/stack_mouse_first.tres"
 
+[node name="SharedTasks" parent="." instance=ExtResource( 7 )]
+stackRoute = "res://src/resources/shared_tasks_stack.tres"
+
 [node name="TaskKbFirst" parent="." instance=ExtResource( 7 )]
 stackRoute = "res://src/resources/stack_kb_first.tres"
 

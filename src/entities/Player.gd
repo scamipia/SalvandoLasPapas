@@ -40,5 +40,4 @@ func _process_input() -> void:
 
 func _execute_job():
 	if job:
-		print(job)
 		job.work() 
