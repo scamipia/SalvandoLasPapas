@@ -7,6 +7,11 @@ var isAvailable = false
 var disable = false
 var steps: int
 
+onready var audio_stream_player = $AudioStreamPlayer
+export (AudioStream) var saw_sound_effect
+
+
+
 func setup(resource: IndividualTaskResource) -> void:
 	steps = resource.clicks_amount
 	position = resource.task_pos
@@ -31,6 +36,7 @@ func execute():
 	if steps > 1:
 		steps -= 1
 		label.text = str(steps)
+		play_sound_effect()
 	else:
 		completeTask() 
 
@@ -40,3 +46,7 @@ func _on_AvailabilityArea_mouse_entered():
 
 func _on_AvailabilityArea_mouse_exited():
 	isAvailable = false
+
+func play_sound_effect():
+	audio_stream_player.stream = saw_sound_effect
+	audio_stream_player.play()

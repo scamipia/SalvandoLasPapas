@@ -33,6 +33,7 @@ func _on_RemainingTime_timeout():
 func game_over():
 	remaining_time.stop()
 	defeat_menu.show()
+	defeat_menu.play_sound()
 	get_tree().paused = true
 	
 
@@ -69,5 +70,6 @@ func _update_done():
 	tasks_remaining -= 1
 	if tasks_remaining == 0:
 		win_menu.show()
+		win_menu.play_sound()
 		remaining_time.stop()
 		get_tree().paused = true

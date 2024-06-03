@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/entities/InidividualTaskMouse.gd" type="Script" id=1]
 [ext_resource path="res://assets/Red-Circle.png" type="Texture" id=2]
 [ext_resource path="res://assets/fonts/kirifont/Kirifont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/audio/player-sound-effects/saw-sound (mp3cut.net).mp3" type="AudioStream" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 22.0227
@@ -12,6 +13,7 @@ radius = 220.227
 
 [node name="IndividualTaskMouse" type="StaticBody2D"]
 script = ExtResource( 1 )
+saw_sound_effect = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -36,6 +38,9 @@ custom_fonts/font = ExtResource( 3 )
 text = "10"
 align = 1
 valign = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true
 
 [connection signal="mouse_entered" from="Sprite/AvailabilityArea" to="." method="_on_AvailabilityArea_mouse_entered"]
 [connection signal="mouse_exited" from="Sprite/AvailabilityArea" to="." method="_on_AvailabilityArea_mouse_exited"]

@@ -15,7 +15,9 @@ func _physics_process(delta):
 	
 
 func _on_WorkArea_body_entered(body):
-	job = body# Replace with function body.
+	if body is IndividualTaskKeyboard:
+		job = body
+		
 
 func _on_WorkArea_body_exited(body):
 	job = null
@@ -40,4 +42,4 @@ func _process_input() -> void:
 
 func _execute_job():
 	if job:
-		job.work() 
+		job.work()   

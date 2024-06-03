@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/vecteezy_vector-laminate-background-with-wooden-texture_162751.jpg" type="Texture" id=1]
 [ext_resource path="res://src/Level.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://src/ui/WinMenu.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/entities/VerticalWall.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/entities/HorizontalWall.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/audio/background/Los Principes del Flamenco - El Periodista.mp3" type="AudioStream" id=11]
 
 [node name="Level" type="Node"]
 script = ExtResource( 2 )
@@ -61,6 +62,11 @@ mouse_filter = 2
 mouse_filter = 2
 
 [node name="RemainingTime" type="Timer" parent="."]
+
+[node name="Backgrond" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+autoplay = true
+bus = "Background"
 
 [connection signal="timeout" from="CanvasLayer/GUI" to="." method="game_over"]
 [connection signal="restart_requested" from="CanvasLayer/DefeatMenu" to="." method="_on_DefeatMenu_restart_requested"]

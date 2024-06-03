@@ -1,6 +1,5 @@
 extends StaticBody2D
 class_name IndividualTask
-
 #signal hit
 #signal win
 #signal done

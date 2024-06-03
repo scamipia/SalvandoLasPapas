@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/saw-sound (mp3cut.net).mp3-21b46986b69d9bd098bd4ff6f89000c1.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/player-sound-effects/saw-sound (mp3cut.net).mp3"
+dest_files=[ "res://.import/saw-sound (mp3cut.net).mp3-21b46986b69d9bd098bd4ff6f89000c1.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

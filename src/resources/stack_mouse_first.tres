@@ -1,8 +1,9 @@
-[gd_resource type="Resource" load_steps=3 format=2]
+[gd_resource type="Resource" load_steps=4 format=2]
 
 [ext_resource path="res://src/entities/TaskStackResource.gd" type="Script" id=1]
 [ext_resource path="res://src/resources/mouse_player_task_2.tres" type="Resource" id=2]
+[ext_resource path="res://src/resources/mouse_player_task_3.tres" type="Resource" id=4]
 
 [resource]
 script = ExtResource( 1 )
-individual_tasks_data = [ ExtResource( 2 ) ]
+individual_tasks_data = [ ExtResource( 2 ), ExtResource( 4 ) ]

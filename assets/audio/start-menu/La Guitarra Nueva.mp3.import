@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/La Guitarra Nueva.mp3-ad0212d69cdff016f1fd46bdf6ae6f93.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/start-menu/La Guitarra Nueva.mp3"
+dest_files=[ "res://.import/La Guitarra Nueva.mp3-ad0212d69cdff016f1fd46bdf6ae6f93.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

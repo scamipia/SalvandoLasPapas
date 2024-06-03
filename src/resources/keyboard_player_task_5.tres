@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://src/entities/IndividualTaskResource.gd" type="Script" id=1]
+[ext_resource path="res://src/entities/IndividualTaskKeyboard.tscn" type="PackedScene" id=2]
+
+[resource]
+script = ExtResource( 1 )
+clicks_amount = 5
+player_type = 2
+task_pos = Vector2( 800, 400 )
+individual_task_scene = ExtResource( 2 )
