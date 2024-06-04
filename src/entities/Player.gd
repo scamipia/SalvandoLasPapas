@@ -5,6 +5,9 @@ const acc = 50
 var screen_size
 var velocity: Vector2 = Vector2.ZERO
 var job
+var pelotita
+
+export (PackedScene) var individual_task_scene: PackedScene
 
 
 func _ready():
@@ -25,6 +28,9 @@ func _on_WorkArea_body_exited(body):
 func _process_input() -> void:
 	if Input.is_action_just_pressed("execute_job"):
 		_execute_job()
+		
+	if Input.is_action_just_pressed("place_ball"):
+		_place_ball()
 	
 	var x_direction:int = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
 	var y_direction:int = int(Input.is_action_pressed("move_down")) - int(Input.is_action_pressed("move_up"))
@@ -41,5 +47,17 @@ func _process_input() -> void:
 	velocity = move_and_slide(velocity)
 
 func _execute_job():
-	if job:
-		job.work()   
+	if job && job is IndividualTaskKeyboard:
+		job.work()
+		#print(self.position)
+		pelotita = job
+		print(pelotita)
+
+func _place_ball():
+	if pelotita:
+		pelotita.position = self.position
+		#pelotita.release(self.position)
+		#add_child(pelotita)
+		pelotita.visible = true
+		print(pelotita)
+		print(pelotita.position)

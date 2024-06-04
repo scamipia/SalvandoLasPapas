@@ -11,6 +11,7 @@ func add_task(individual_task):
 # Método para retirar y devolver el último elemento de la pila
 func get_next_task():
 	if not is_empty():
+		print(individual_tasks_data.pop_front())
 		var task = individual_tasks_data.pop_front().get_task()
 		return task
 	else:
