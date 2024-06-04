@@ -6,6 +6,13 @@ var screen_size
 var velocity: Vector2 = Vector2.ZERO
 var job
 var pelotita
+onready var sprite = $Sprite
+
+var picked = false
+
+var player_texture = preload("res://assets/player.png")
+var player_ball = preload("res://assets/player_with_ball.png")
+var task = preload("res://src/entities/IndividualTaskKeyboard.tscn")
 
 export (PackedScene) var individual_task_scene: PackedScene
 
@@ -19,18 +26,29 @@ func _physics_process(delta):
 
 func _on_WorkArea_body_entered(body):
 	if body is IndividualTaskKeyboard:
-		job = body
+		pelotita = body
+		
+	#if body is IndividualTaskKeyboard:
+	#	job = body
 		
 
 func _on_WorkArea_body_exited(body):
 	job = null
 
 func _process_input() -> void:
+	
+	if not picked:
+		sprite.texture = player_texture
+	else:
+		sprite.texture = player_ball
+		
 	if Input.is_action_just_pressed("execute_job"):
 		_execute_job()
 		
 	if Input.is_action_just_pressed("place_ball"):
 		_place_ball()
+		
+
 	
 	var x_direction:int = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
 	var y_direction:int = int(Input.is_action_pressed("move_down")) - int(Input.is_action_pressed("move_up"))
@@ -47,17 +65,22 @@ func _process_input() -> void:
 	velocity = move_and_slide(velocity)
 
 func _execute_job():
-	if job && job is IndividualTaskKeyboard:
-		job.work()
-		#print(self.position)
-		pelotita = job
-		print(pelotita)
+	pelotita.queue_free()
+	picked = true
+	sprite.texture = player_ball
+	#if job && job is IndividualTaskKeyboard:
+	#	job.work()
+	#	pelotita = job
+	#	print(pelotita)
 
 func _place_ball():
-	if pelotita:
-		pelotita.position = self.position
-		#pelotita.release(self.position)
-		#add_child(pelotita)
-		pelotita.visible = true
-		print(pelotita)
-		print(pelotita.position)
+	picked = false
+	sprite.texture = player_texture
+	pelotita = task.instance()
+	pelotita.global_position = $pelotita_position.global_position
+	get_tree().get_current_scene().add_child(pelotita)
+	#if pelotita:
+	#	pelotita.position = self.position
+	#	pelotita.visible = true
+	#	print(pelotita)
+	#	print(pelotita.position)
